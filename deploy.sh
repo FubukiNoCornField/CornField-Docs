@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-
 set -e
+git checkout master
 npm run build
 cp -rf src/.vuepress/dist/ docs/
 rm -rf src/.vuepress/dist/
