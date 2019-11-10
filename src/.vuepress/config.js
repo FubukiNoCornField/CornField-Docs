@@ -38,11 +38,13 @@ module.exports = {
         editLinkText: '帮助我们改善此页面！',
         nav: [
           { text: '开发规范', link: '/specification/' },
+          { text: '网站设计概念', link: '/definitions/' },
           { text: '前端路由文档', link: '/frontend/' },
           { text: '后端路由文档', link: '/backend/' }
         ],
         sidebar: {
           '/specification/': [''],
+          '/definitions/': [''],
           '/frontend/': [''],
           '/backend/': ['']
         }
