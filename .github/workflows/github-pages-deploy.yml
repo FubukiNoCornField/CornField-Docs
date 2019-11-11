@@ -27,6 +27,8 @@ jobs:
           GITHUB_DEPLOY_TOKEN: ${{ secrets.GITHUB_DEPLOY_TOKEN }}
         run: |
           cd src/.vuepress/dist
+          git config --global user.email "afanyiyu@hotmail.com"
+          git config --global user.name "CornField Deploy Bot"
           git init
           git add -A
           git commit -m 'chore':' 🤖 GitHub Pages Deploy in Travis CI from ${GITHUB_SHA}'
