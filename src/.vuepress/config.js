@@ -40,13 +40,23 @@ module.exports = {
           { text: '开发规范', link: '/specification/' },
           { text: '网站设计概念', link: '/definitions/' },
           { text: '前端路由文档', link: '/frontend/' },
-          { text: '后端路由文档', link: '/backend/' }
+          { text: '后端路由文档', link: '/backend/' },
+          { text: '运维', link: '/devops/' }
         ],
         sidebar: {
-          '/specification/': [''],
-          '/definitions/': [''],
+          '/specification/': ['', 'commit.md', 'transactions.md'],
+          '/definitions/': [
+            '',
+            'cv.md',
+            'ga.md',
+            'au.md',
+            'fl.md',
+            'ul.md',
+            'pagination.md'
+          ],
           '/frontend/': [''],
-          '/backend/': ['']
+          '/backend/': [''],
+          '/devops/': ['']
         }
       }
     }

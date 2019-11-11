@@ -32,20 +32,22 @@ git branch <nickname> && git checkout <nickname>
 
 现在，你的开发环境以及准备就绪。推荐使用 [VS Code](https://code.visualstudio.com/) 进行开发。
 
-## 提交规范
+## 搭建本地数据库环境
 
-:::tip
-Commit 的用法可以是多种多样的。例如，有的开发者喜欢只在功能更新和 bug 修复时 commit 一次，而有的开发者喜欢将 commit 作为“还原点”或“同步器”使用。我们并不强制要求开发者仅在功能更新时进行 commit，只是要求最后一次 commit 总结本次更改的内容并 PR（下一篇文章中会提到）。
-:::
+在本地下载 `MySQL` 和 `Redis` 并安装。确保服务启动且监听默认端口。
 
-确保你的工作目录在项目目录（开发主项目）或在 Docs 目录（编写文档）。在 Terminal 中键入：
+## Docker 包生成及推送
+
+我们使用 Travis CI 进行 Docker Image 的生成及推送。
+
+## 线上部署
 
 ```sh
-npm run commit
+# 如果旧的 Images 已经存在则需要先行移除
+docker rmi afanyiyu/cornfield-frontend || true
+docker rmi afanyiyu/cornfield-backend || true
+
+docker run -d -p 2170:2170 --env-file /cornfield/env --name cornfield-frontend --rm afanyiyu/cornfield-frontend
+
+docker run -d -p 2171:2171 --env-file /cornfield/env --name cornfield-backend --rm afanyiyu/cornfield-backend
 ```
-
-并回车。之后，按照交互式提示完成 commit。
-
-## 基于 Pull Request 的开发流程
-
-功能修改或 bug 修复的最后一个 commit 提交并推送完毕之后，打开 [New Pull Request](https://github.com/FubukiNoCornField/CornField/compare)页面。选择“master <- &lt;nickname&gt;”并创建新的 Pull Request。

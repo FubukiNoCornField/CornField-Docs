@@ -1,0 +1,35 @@
+# Definitions for CornField
+
+# 通用内容类型
+interface UniversalObject {
+  id: Int! # 内容 ID。数据库主键。
+  watch: Int! # 观看数
+  reward: Int # 打赏数。待定数据，单位：玉米
+  favorites: Int! # 收藏数
+  title: String! # 标题
+  description: String! # 简介。MarkDown 格式。以 MEDIUMTEXT 类型存储，最大长度为16777215(2^24-1)个字符。
+}
+
+type CV implements UniversalObject {
+  content: String! # 专栏内容。MarkDown 格式。以 LONGTEXT 类型存储，最大长度为4294967295(2^32-1)个字符。
+}
+
+type GA implements UniversalObject {
+  content: [String!]! # 图片列表。JSON格式存储，内容为图床或托管服务提供的唯一标识符。
+}
+
+type AU implements UniversalObject {
+  content: String! # 音频源。JSON格式存储，内容为托管服务提供的唯一标识符。
+}
+
+type FL implements UniversalObject {
+  content: String! # 文件源。JSON格式存储，内容为托管服务提供的唯一标识符。
+}
+
+type User {
+  uid: Int! # 用户 UID。数据库主键。
+  username: String! # 用户名。不可更改。
+  password: String! # 用户密码的摘要。
+  displayName: String! # 显示名称。
+  corn: Int! # 玉米个数。
+}
