@@ -31,5 +31,5 @@ jobs:
           git config --global user.name "CornField Deploy Bot"
           git init
           git add -A
-          git commit -m 'chore':' 🤖 GitHub Pages Deploy in Travis CI from ${GITHUB_SHA}'
+          git commit -m 'chore':' 🤖 GitHub Pages Deploy in GitHub Actions'
           git push -f https://${GITHUB_DEPLOY_TOKEN}@github.com/FubukiNoCornField/fubukinocornfield.github.io.git master
