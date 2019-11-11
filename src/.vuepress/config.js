@@ -47,6 +47,7 @@ module.exports = {
           '/specification/': ['', 'commit.md', 'transactions.md'],
           '/definitions/': [
             '',
+            'universal.md',
             'cv.md',
             'ga.md',
             'au.md',
