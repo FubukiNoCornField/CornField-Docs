@@ -38,7 +38,7 @@ git branch <nickname> && git checkout <nickname>
 
 ## Docker 包生成及推送
 
-我们使用 Travis CI 进行 Docker Image 的生成及推送。
+我们使用 GitHub Actions 进行 Docker Image 的生成及推送。
 
 ## 线上部署
 
