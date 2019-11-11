@@ -1,5 +1,4 @@
 name: 'GitHub Pages Deploy'
-description: 'GitHub Pages Build and Deploy.'
 on: [push, pull_request]
 jobs:
   build:
@@ -25,7 +24,7 @@ jobs:
           npm run build
       - name: Deploy
         env:
-          - GITHUB_DEPLOY_TOKEN: ${{ secrets.GITHUB_DEPLOY_TOKEN }}
+          GITHUB_DEPLOY_TOKEN: ${{ secrets.GITHUB_DEPLOY_TOKEN }}
         run: |
           cd src/.vuepress/dist
           git init
