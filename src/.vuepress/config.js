@@ -55,8 +55,8 @@ module.exports = {
             'ul.md',
             'pagination.md'
           ],
-          '/frontend/': [''],
-          '/backend/': [''],
+          '/frontend/': ['', 'dashboard.md', 'space.md'],
+          '/backend/': ['', 'user.md', 'errcode.md'],
           '/devops/': ['']
         }
       }

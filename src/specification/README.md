@@ -34,7 +34,7 @@ git branch <nickname> && git checkout <nickname>
 
 ## 搭建本地数据库环境
 
-在本地下载 `MySQL` 和 `Redis` 并安装。确保服务启动且监听默认端口。
+在本地下载 `MongoDB` 和 `Redis` 并安装。确保服务启动且监听默认端口。
 
 ## Docker 包生成及推送
 
